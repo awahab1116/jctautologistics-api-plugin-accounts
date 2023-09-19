@@ -256,6 +256,8 @@ type Account implements Node {
   "An object storing plugin-specific preferences for this account"
   preferences: JSONObject
 
+  phone: String
+
   """
   The primary email address for the account. This matches the address in `emailRecords` where `provides` is `default`.
   """
@@ -519,6 +521,8 @@ extend type Query {
 
   "Returns accounts optionally filtered by account groups"
   accounts(
+    searchQuery: String
+
     "Return only accounts in any of these groups"
     groupIds: [ID]
 
